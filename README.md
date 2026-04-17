@@ -1,109 +1,94 @@
 # Polymarket Historical Prices Dataset
 
-**8,701 markets | 7.17M price records | $10.8B total volume**
+**9,550 markets | 8.9M data points | $11.7B total volume**
 
-The largest publicly available dataset of Polymarket prediction market data. Covers politics, sports, crypto, geopolitics, science/tech, economics, weather, and entertainment markets.
+The largest publicly available Polymarket prediction market dataset. 30 days of 15-minute price snapshots across politics, sports, crypto, geopolitics, economics, and more.
 
-## What's Included
+> **Full dataset (8.1M prices + 792K orderbooks) available on [Gumroad →](https://manja8.gumroad.com/l/polymarket-data)**
 
-### markets.csv (8,701 rows)
-Market metadata for every tracked Polymarket market.
+## What's Included (free)
+
+### markets.csv (9,550 rows)
+Every tracked Polymarket market with metadata.
 
 | Column | Description |
 |--------|-------------|
-| `id` | Unique market identifier (CLOB token) |
-| `question` | The market question (e.g., "Will Bitcoin hit $100K by June 2026?") |
-| `category` | Market category (politics, crypto, sports, etc.) |
-| `tags` | Comma-separated tags |
-| `slug` | URL slug on polymarket.com |
+| `market_id` | Unique market identifier |
+| `question` | The market question |
+| `category` | politics, sports, crypto, geopolitics, economics, etc. |
 | `volume` | Total lifetime trading volume (USD) |
 | `volume_24h` | 24-hour trading volume |
 | `liquidity` | Current order book liquidity |
 | `end_date` | Market resolution date |
-| `created_date` | Market creation date |
-| `outcomes` | Possible outcomes (e.g., "Yes, No") |
-| `outcome_prices` | Current prices per outcome |
-| `best_bid` / `best_ask` / `spread` | Order book data |
+| `best_bid` / `best_ask` / `spread` | Order book pricing |
 | `last_trade_price` | Last traded price |
+| `one_day_change` | 24h price change |
 | `active` | Whether market is still active |
-| `resolved` | Whether market has resolved |
-| `resolved_outcome` | Resolution result if resolved |
 
-### prices_sample.csv (100K rows)
-Sample of the full 7.17M price history records. Most recent 100K records.
+### prices_sample.csv (100,000 rows)
+Latest 100K price snapshots — preview of the full 8.1M dataset.
 
 | Column | Description |
 |--------|-------------|
-| `market_id` | Links to markets.csv `id` |
-| `outcome` | Which outcome this price is for |
-| `price` | Price (0.00 to 1.00, representing probability) |
-| `ts` | Timestamp (ISO 8601 UTC) |
+| `market_id` | Links to markets.csv |
+| `outcome` | "Yes" or "No" |
+| `price` | 0.00 to 1.00 (implied probability) |
+| `timestamp` | ISO 8601 UTC timestamp |
 
-## Dataset Statistics
+## Category Breakdown
 
-| Metric | Value |
-|--------|-------|
-| Total Markets | 8,701 |
-| Total Price Records | 7,170,986 |
-| Total Volume Traded | $10.8 Billion |
-| Date Range (markets) | Mar 2025 - Apr 2026 |
-| Date Range (prices) | Mar 2026 - Apr 2026 |
-| Categories | 10 (politics, crypto, sports, geopolitics, etc.) |
+| Category | Markets | Volume |
+|----------|---------|--------|
+| AI/LLM & Other | 5,326 | $3.3B |
+| Politics | 868 | $3.7B |
+| Sports | 1,291 | $2.3B |
+| Geopolitics | 388 | $919M |
+| Crypto | 1,356 | $579M |
+| Economics | 134 | $715M |
+| Science/Tech | 157 | $117M |
 
-### Category Breakdown
+## Full Dataset (paid)
 
-| Category | Markets |
-|----------|---------|
-| Other | 4,657 |
-| Crypto | 1,217 |
-| Sports | 1,162 |
-| Politics | 821 |
-| Geopolitics | 374 |
-| Science & Tech | 153 |
-| Economics | 125 |
-| Weather | 112 |
-| Entertainment | 78 |
+The free sample includes market metadata + 100K price previews.
 
-## Full Dataset
+**[Get the full dataset on Gumroad →](https://manja8.gumroad.com/l/polymarket-data)**
 
-This repository contains a **sample** (100K price records). The full dataset includes:
-- All 7.17M price records
-- Raw SQLite database (2.2GB) for easy querying
-- Additional tables: orderbooks, market snapshots, market features
+| Tier | Price | What You Get |
+|------|-------|-------------|
+| Sample | $1 | markets.csv + 100K prices |
+| Full | $9 | 8.1M prices + 792K orderbooks (SQLite) |
+| Subscription | $29/mo | Weekly updates + new markets |
 
-**Get the full dataset:** [Polymarket Historical Data on Gumroad](https://manja316.gumroad.com/)
+The full dataset includes:
+- **8,158,672 price snapshots** at 15-minute intervals
+- **792,527 orderbook depth snapshots** (top 10 levels, top 200 markets)
+- **SQLite database** ready for pandas, DuckDB, or Polars
+- 30 days of continuous data (March 18 — April 17, 2026)
 
 ## Use Cases
 
-- **Backtesting** prediction market trading strategies
-- **Academic research** on information aggregation and forecasting
-- **Analytics dashboards** for prediction market performance
-- **Machine learning** models for price prediction
-- **Event study analysis** on how markets react to news
-- **Calibration research** comparing market probabilities to outcomes
+- **Backtest trading strategies** — our crash recovery strategy shows 75% WR on 6,225 simulated trades
+- **Mean reversion analysis** — after a >20% drop, average return is +6.6% within 15 minutes
+- **Spread dynamics** — study bid/ask behavior across categories
+- **ML training data** — predict outcome probabilities from price patterns
+- **Research** — information aggregation efficiency in prediction markets
 
-## Data Format
+## Data Pipeline
 
-- All files are UTF-8 encoded CSV with headers
-- Timestamps are ISO 8601 format in UTC
-- Prices are decimal values between 0.00 and 1.00
-- Volume and liquidity are in USD
+Data collected every 15 minutes by an automated pipeline:
+- Gamma API → market metadata + prices
+- CLOB API → orderbook depth for top markets
+- SQLite storage → optimized for analytical queries
 
-## Updates
+## Contact
 
-This dataset is updated weekly. Star/watch this repo for notifications.
+- Email: LuciferForge@proton.me
+- Website: [protodex.io](https://protodex.io)
+- GitHub: [@manja316](https://github.com/manja316)
 
 ## License
 
-CC0 1.0 Universal - Public Domain. Use for any purpose.
+CC-BY-4.0. Free to use with attribution.
 
-## Citation
-
-```
-@dataset{polymarket_historical_2026,
-  title={Polymarket Historical Prices Dataset},
-  author={manja316},
-  year={2026},
-  url={https://github.com/manja316/polymarket-historical-data}
-}
-```
+---
+*Updated: April 17, 2026. Data refreshes weekly.*
