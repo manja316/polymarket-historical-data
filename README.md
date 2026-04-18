@@ -53,11 +53,11 @@ The free sample includes market metadata + 100K price previews.
 
 **[Get the full dataset on Gumroad →](https://manja8.gumroad.com/l/polymarket-data)**
 
-| Tier | Price | What You Get |
-|------|-------|-------------|
-| Sample | $1 | markets.csv + 100K prices |
-| Full | $9 | 8.1M prices + 792K orderbooks (SQLite) |
-| Subscription | $29/mo | Weekly updates + new markets |
+| Tier | Price | What You Get | Link |
+|------|-------|-------------|------|
+| Sample | $1 | markets.csv + 100K prices | [Gumroad](https://manja8.gumroad.com/l/polymarket-data) |
+| **Full** | **$9** | **8.1M prices + 792K orderbooks (SQLite)** | **[Buy Now](https://checkout.dodopayments.com/buy/pdt_0NcwYHQb6UoiZb41mnshx)** |
+| **Subscription** | **$29/mo** | **Weekly updates + new markets** | **[Subscribe](https://checkout.dodopayments.com/buy/pdt_0NcwYR0akzPEQoh1leSk9)** |
 
 The full dataset includes:
 - **8,158,672 price snapshots** at 15-minute intervals
