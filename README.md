@@ -1,14 +1,14 @@
 # Polymarket Historical Prices Dataset
 
-**9,550 markets | 8.9M data points | $11.7B total volume**
+**13,964 markets | 10.8M data points | $11.7B+ total volume**
 
-The largest publicly available Polymarket prediction market dataset. 30 days of 15-minute price snapshots across politics, sports, crypto, geopolitics, economics, and more.
+The largest publicly available Polymarket prediction market dataset. 30+ days of 15-minute price snapshots across politics, sports, crypto, geopolitics, economics, and more.
 
-> **Full dataset (8.1M prices + 792K orderbooks) available on [Gumroad →](https://manja8.gumroad.com/l/polymarket-data)**
+> **Full dataset (10.8M prices + orderbooks) available on [Gumroad →](https://manja8.gumroad.com/l/polymarket-data?utm_source=github&utm_medium=readme&utm_campaign=phd-readme-2026-05-11)**
 
 ## What's Included (free)
 
-### markets.csv (9,550 rows)
+### markets.csv (13,964 rows)
 Every tracked Polymarket market with metadata.
 
 | Column | Description |
@@ -26,7 +26,7 @@ Every tracked Polymarket market with metadata.
 | `active` | Whether market is still active |
 
 ### prices_sample.csv (100,000 rows)
-Latest 100K price snapshots — preview of the full 8.1M dataset.
+Latest 100K price snapshots — preview of the full 10.8M dataset.
 
 | Column | Description |
 |--------|-------------|
@@ -56,14 +56,14 @@ The free sample includes market metadata + 100K price previews.
 | Tier | Price | What You Get | Link |
 |------|-------|-------------|------|
 | Sample | $1 | markets.csv + 100K prices | [Gumroad](https://manja8.gumroad.com/l/polymarket-data) |
-| **Full** | **$9** | **8.1M prices + 792K orderbooks (SQLite)** | **[Buy Now](https://checkout.dodopayments.com/buy/pdt_0NcwYHQb6UoiZb41mnshx)** |
+| **Full** | **$9** | **10.8M prices + orderbooks (SQLite)** | **[Buy Now](https://checkout.dodopayments.com/buy/pdt_0NcwYHQb6UoiZb41mnshx)** |
 | **Subscription** | **$29/mo** | **Weekly updates + new markets** | **[Subscribe](https://checkout.dodopayments.com/buy/pdt_0NcwYR0akzPEQoh1leSk9)** |
 
 The full dataset includes:
-- **8,158,672 price snapshots** at 15-minute intervals
-- **792,527 orderbook depth snapshots** (top 10 levels, top 200 markets)
+- **10,820,040 price snapshots** at 15-minute intervals
+- **Orderbook depth snapshots** (top 10 levels, top markets)
 - **SQLite database** ready for pandas, DuckDB, or Polars
-- 30 days of continuous data (March 18 — April 17, 2026)
+- 30+ days of continuous data, refreshed weekly
 
 ## Use Cases
 
